@@ -1,13 +1,11 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-
+import Home from "./pages/Home";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App bg-red-900">
-      <div className="underline">hello</div>
+    <div className="App w-screen h-screen">
+      <Home />
     </div>
   );
 }
