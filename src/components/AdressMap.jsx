@@ -1,9 +1,9 @@
 import React from "react";
 const AddressMap = () => {
   return (
-    <div className="bg-black google-map-code w-screen h-screen py-16 flex text-white">
+    <div className="bg-black google-map-code w-screen h-screen py-16 flex text-white font-unbounded">
       <div className="map-info w-1/2 h-full p-16">
-        <h1 className="text-5xl mt-24" data-aos="fade-down">
+        <h1 className="text-5xl mt-24 font-unbounded" data-aos="fade-down">
           FIND US
         </h1>
         <h1
