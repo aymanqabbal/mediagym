@@ -24,12 +24,12 @@ const Detail = ({ exerciseDetail }) => {
   ];
 
   return (
-    <div className="flex mt-6 p-14">
+    <div className="flex xsm:flex-col lg:flex-row justify-center items-center mt-6 p-14">
       <img
         src={gifUrl}
         alt={name}
         loading="lazy"
-        className="detail-image w-1/2 h-fit rounded-3xl"
+        className="detail-image xsm:w-full  sm:w-1/2 h-fit rounded-3xl "
       />
       <div className="p-5 text-center">
         <h1 className="font-shrikhand text-7xl text-red-500">{name}</h1>

@@ -8,6 +8,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
   return (
     <div>
       <h3
+        className="text-center mb-4"
         sx={{ fontSize: { lg: "44px", xs: "25px" } }}
         fontWeight={700}
         color="#000"
@@ -19,7 +20,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         </span>{" "}
         exercise videos
       </h3>
-      <div className="flex flex-row gap-2 ">
+      <div className="flex justify-center items-center xsm:flex-col lg:flex-row gap-2 ">
         {exerciseVideos?.slice(0, 3)?.map((item, index) => (
           <a
             key={index}
