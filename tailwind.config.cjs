@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         unbounded: ["Unbounded"],
+        shrikhand: ["Shrikhand"],
       },
     },
   },
