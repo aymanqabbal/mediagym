@@ -16,6 +16,7 @@ const Home = () => {
         bodyPart={bodyPart}
         setBodyPart={setBodyPart}
       /> */}
+      {console.log(exercises)}
       <Exercises
         setExercises={setExercises}
         exercises={exercises}

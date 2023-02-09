@@ -68,8 +68,6 @@ body {
   width: 400px;
   height: 445px;
   background: #fff;
-  border-top: 4px solid #FF2625;
-  border-bottom-left-radius: 20px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -157,3 +155,12 @@ body {
   background-image: url(/src/assets/images/ring\ girl.jpg);
 }
 img{transition: 0.7s ease;}
+.textclip{
+
+  text-transform: uppercase;
+  background: url(/src/assets/arnold.gif);
+  background-size: contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}

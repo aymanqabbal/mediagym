@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         unbounded: ["Unbounded"],
         shrikhand: ["Shrikhand"],
+        modak: ["Modak"],
       },
     },
     screens: {

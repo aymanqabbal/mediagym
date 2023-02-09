@@ -1,5 +1,6 @@
 import React from "react";
 // import Register from "./Register";
+import gif from "../assets/giphy.gif";
 export default function Contact() {
   return (
     <section className="contact text-white w-screen h-screen lg:pt-24 ">

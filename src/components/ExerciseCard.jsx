@@ -7,10 +7,13 @@ import axios from "axios";
 const ExerciseCard = ({ exercise }) => {
   const [liked, setLike] = useState(false);
   return (
-    <div className="exercise-wrapper rounded border text-black text-center">
-      <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
+    <div className="exercise-wrapper  text-black text-center">
+      <Link
+        className="exercise-card rounded-3xl"
+        to={`/exercise/${exercise.id}`}
+      >
         <img
-          className="rounded"
+          className="rounded-3xl"
           src={exercise.gifUrl}
           alt={exercise.name}
           loading="lazy"
