@@ -37,12 +37,12 @@ export default function Benifits() {
   ));
   return (
     <section
-      className="bg-card overflow-hidden bg-black h-screen flex items-center justify-center h-screentext-gray-700 body-font relative snap-start"
+      className="bg-card overflow-hidden bg-black h-screen flex xsm:flex-col lg:flex-row items-center justify-center h-screentext-gray-700 body-font relative snap-start"
       data-scrollreveal="enter left after 0s over 1s"
     >
       {imgs[index]}
-      <div className="container px-52 py-24  mx-auto absolute">
-        <div className="flex flex-wrap -m-4 text-center">
+      <div className="container mx-auto  ">
+        <div className="py-36 flex flex-wrap -m-4 text-center">
           <div
             className="p-4 md:w-1/3 sm:w-1/2 w-full "
             data-aos="fade-up"
@@ -50,7 +50,7 @@ export default function Benifits() {
             onMouseOver={() => set(1)}
           >
             <motion.div
-              className="h-60 w= opacity-80"
+              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >
@@ -78,7 +78,7 @@ export default function Benifits() {
             onMouseOver={() => set(2)}
           >
             <motion.div
-              className="h-60 w= opacity-80"
+              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >
@@ -106,7 +106,7 @@ export default function Benifits() {
             id="locker-room"
           >
             <motion.div
-              className="h-60 w= opacity-80"
+              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >
