@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home";
 import "./App.css";
+import Framer from "./components/Framer";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import { Routes, Route } from "react-router";
@@ -15,6 +16,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/exercises" element={<ExersicesPage />} />
+        <Route path="/framer" element={<Framer />} />
         <Route path="/exercise/:id" element={<ExerciseDetail />} />
       </Routes>
     </div>
