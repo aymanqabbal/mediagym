@@ -1,5 +1,8 @@
 import React from "react";
 import images from "../utils/images";
+import AnimatedCharacters from "../components/AnimatedCharacters";
+import AnimatedLetters from "../components/Banner";
+import Text from "../components/Text";
 export default function Hero() {
   return (
     <section
@@ -9,7 +12,8 @@ export default function Hero() {
       }}
     >
       <div className="pt-40  pl-32 w-96">
-        <h1 className="text-5xl" data-aos="fade-up">
+        <Text text={"hello"} />
+        <h1 key={"maintext"} className="text-5xl" data-aos="fade-up">
           THE GIFT YOU ACTUALLY WANT
         </h1>
 

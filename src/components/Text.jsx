@@ -1,15 +1,20 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 function Text({ text }) {
+  const li = text.split("");
+  const elements = li.map((c, i) => (
+    <motion.span
+      className="inline-block"
+      initial={{ y: -100, color: "rgb(250,250,250)" }}
+      animate={{ y: 0, color: "rgb(0,0,0)" }}
+      transition={{ duration: 1, delay: i * 0.2 }}
+    >
+      {c}
+    </motion.span>
+  ));
   return (
-    <div className="bg-green-400 relative">
-      <h1 className="textclip w- text-9xl  bg-red-500 font-modak flex border-spacing-5 absolute z-50 top-10">
-        media<br></br>gym
-      </h1>
-      <h1 className="text-9xl text-red-500 font-modak absolute z-0 left-1 top-11">
-        media<br></br>gym
-      </h1>
-    </div>
+    <motion.div className="text-5xl overflow-hidden">{elements}</motion.div>
   );
 }
 export default Text;
