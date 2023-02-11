@@ -41,21 +41,21 @@ export default function Benifits() {
       data-scrollreveal="enter left after 0s over 1s"
     >
       {imgs[index]}
-      <div className="container mx-auto  ">
+      <div className="container mx-auto ">
         <div className="py-36 flex flex-wrap -m-4 text-center">
           <div
-            className="p-4 md:w-1/3 sm:w-1/2 w-full "
+            className="p-4 md:w-1/3 sm:w-1/2 w-full mt-10 "
             data-aos="fade-up"
             id="pushup"
             onMouseOver={() => set(1)}
           >
             <motion.div
-              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
+              className="xsm:h-fit w-2/3 mx-auto    opacity-80 px-8 pb-10 pt-2"
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >
               <h1
-                className="capitalize mb-6 text-3xl"
+                className="capitalize mb-6 xsm:text-2xl text-3xl"
                 data-aos="fade-up"
                 data-aos-duration="2000"
               >
@@ -67,7 +67,7 @@ export default function Benifits() {
                 data-aos-duration="2500"
               >
                 Classes curated and develop ed by the industry's best talent,
-                <br></br>bringing results through innovation.
+                bringing results through innovation.
               </p>
             </motion.div>
           </div>
@@ -78,7 +78,7 @@ export default function Benifits() {
             onMouseOver={() => set(2)}
           >
             <motion.div
-              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
+              className="xsm:h-fit w-2/3 mx-auto "
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >
@@ -106,7 +106,7 @@ export default function Benifits() {
             id="locker-room"
           >
             <motion.div
-              className="xsm:h-44 w-2/3 mx-auto  lg:h-60 opacity-80"
+              className="xsm:h-fit w-2/3 mx-auto  lg:h-60 opacity-80 px-8 pb-10 pt-2"
               whileHover={cardHover}
               transition={{ type: "spring", duration: 1 }}
             >

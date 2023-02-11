@@ -1,22 +1,24 @@
 import React from "react";
+import Text from "./Text";
 const AddressMap = () => {
   return (
-    <div className="bg-black google-map-code w-screen h-screen py-16 flex text-white font-unbounded">
-      <div className="map-info w-1/2 h-full p-16">
-        <h1 className="text-5xl mt-24 font-unbounded" data-aos="fade-down">
-          FIND US
-        </h1>
-        <h1
-          className="font-light text-lg w-full px-16 mt-10"
-          data-aos="fade-up"
+    <div className="bg-black google-map-code w-screen h-screen py-16 md:flex   text-white font-unbounded">
+      <div className="map-info md:w-1/2 md:h-full px-16">
+        <div
+          className="text-5xl mt-24 font-unbounded flex gap-6"
+          data-aos="fade-down"
         >
+          <Text text={"FIND"} delay={0.2} />
+          <Text text={"US"} delay={1} />
+        </div>
+        <h1 className="font-light text-lg w-full mt-10" data-aos="fade-up">
           Unrivaled Group Fitness classes. Unparalleled Personal Training. a gym
           that inspires you to perform and luxury amenities that keep you
           feeling your best.
         </h1>
       </div>
       <div
-        className="w-1/2 h-full px-6"
+        className="w-1/2 xsm:h-1/2 xsm:w-screen xsm:mt-28 md:h-full px-6"
         data-aos="fade-left"
         data-aos-duration="2000"
       >

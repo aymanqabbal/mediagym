@@ -29,7 +29,7 @@ function Text({ text, delay }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ delay: delay }}
-        className="text-5xl overflow-hidden"
+        className="xsm:text-4xl sm:text-5xl overflow-hidden"
       >
         {elements}
       </motion.div>
