@@ -1,25 +1,39 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
-
-function Text({ text }) {
+import { useEffect } from "react";
+function Text({ text, delay }) {
   const li = text.split("");
+  useEffect(() => {
+    return console.log("dismounted");
+  });
   const elements = li.map((c, i) => (
-    <motion.span
-      className="inline-block"
-      initial={{ y: -100, color: "rgb(250,250,250)" }}
-      animate={{ y: 0, color: "rgb(0,0,0)" }}
-      transition={{
-        duration: 1,
-        delay: i * 0.2,
-        type: "spring",
-        stiffness: 300,
-      }}
-    >
-      {c}
-    </motion.span>
+    <AnimatePresence mode="wait">
+      <motion.span
+        className="inline-block"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 100, opacity: 0 }}
+        transition={{
+          duration: 0.3,
+          delay: delay + i * 0.1,
+        }}
+      >
+        {c}
+      </motion.span>
+    </AnimatePresence>
   ));
   return (
-    <motion.div className="text-5xl overflow-hidden">{elements}</motion.div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ delay: delay }}
+        className="text-5xl overflow-hidden"
+      >
+        {elements}
+      </motion.div>
+    </AnimatePresence>
   );
 }
 export default Text;
