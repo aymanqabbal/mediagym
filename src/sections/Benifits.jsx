@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import images from "../utils/images";
 import { animate, AnimatePresence, motion } from "framer-motion";
+import Card from "./Card";
+import { BenifitsContext } from "../BenifitsContext";
 export default function Benifits() {
-  const [index, set] = useState(0);
-  const cardHover = {
-    backgroundColor: "rgb(255, 255, 255)",
-    color: "rgb(0,0,0)",
-    borderRadius: "10%",
-    scale: 1.1,
-    opacity: 1,
-  };
-  const imgs = images.map((i) => (
+  const { active, set } = useContext(BenifitsContext);
+
+  const imgs = images.map((i, index) => (
     <motion.div
       className="h-screen w-screen bg-cover absolute top-0 left-0 z-0 "
-      key={i.id}
+      key={i.id + i + "images" + index}
       initial={{
         opacity: 0,
         scale: 1.1,
         WebkitFilter: "blur(8px)",
         filter: "blur(8px)",
+        transition: { duration: 0.7 },
       }}
       animate={{
         backgroundImage: `url(${i.url})`,
@@ -26,108 +23,52 @@ export default function Benifits() {
         filter: "blur(0px)",
         opacity: 1,
         scale: 1,
+        transition: { duration: 0.7 },
       }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
       transition={{
-        duration: 1.5,
+        duration: 0.7,
         WebkitFilter: "blur(8px)",
         filter: "blur(8px)",
       }}
     ></motion.div>
   ));
+  const cards = [
+    {
+      h1: "unlimited classes",
+      p: "Classes curated and develop ed by the industry's best talent, bringing results through innovation.",
+    },
+    {
+      h1: "Studio Pilatess",
+      p: "A purely authentic Pilates experience that strengthens and creates balance in the body.",
+    },
+    {
+      h1: "Personal Training",
+      p: " Performance at its highest level with renowned Personal Training.",
+    },
+  ];
+  const cardElements = cards.map((c, i) => (
+    <div
+      className="lg:p-4 md:w-1/3 sm:w-1/2 w-full mt-10 "
+      data-aos="fade-up"
+      id="pushup"
+      key={c + i + "card-wrapper"}
+    >
+      <Card key={i + c.h1} h1={c.h1} p={c.p} id={i + 1} />
+    </div>
+  ));
   return (
     <section
-      className="bg-card overflow-hidden bg-black h-screen flex xsm:flex-col lg:flex-row items-center justify-center h-screentext-gray-700 body-font relative snap-start"
+      className="bg-card overflow-hidden bg-black h-screen flex items-center justify-center body-font relative snap-start"
       data-scrollreveal="enter left after 0s over 1s"
+      key={"benifits-section"}
     >
-      {imgs[index]}
-      <div className="container mx-auto ">
-        <div className="py-36 flex flex-wrap -m-4 text-center">
-          <div
-            className="p-4 md:w-1/3 sm:w-1/2 w-full mt-10 "
-            data-aos="fade-up"
-            id="pushup"
-            onMouseOver={() => set(1)}
-          >
-            <motion.div
-              className="xsm:h-fit w-2/3 mx-auto    opacity-80 px-8 pb-10 pt-2"
-              whileHover={cardHover}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <h1
-                className="capitalize mb-6 xsm:text-2xl text-3xl"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-              >
-                unlimited classes
-              </h1>
-              <p
-                className="font-light"
-                data-aos="fade-up"
-                data-aos-duration="2500"
-              >
-                Classes curated and develop ed by the industry's best talent,
-                bringing results through innovation.
-              </p>
-            </motion.div>
-          </div>
-          <div
-            className="p-4 md:w-1/3 sm:w-1/2 w-full "
-            data-aos="fade-up"
-            id="ring-girl"
-            onMouseOver={() => set(2)}
-          >
-            <motion.div
-              className="xsm:h-fit w-2/3 mx-auto "
-              whileHover={cardHover}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <h1
-                className="capitalize mb-6 text-3xl"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-              >
-                Studio Pilates
-              </h1>
-              <p
-                className="font-light"
-                data-aos="fade-up"
-                data-aos-duration="2500"
-              >
-                A purely authentic Pilates experience that strengthens and
-                creates balance in the body.
-              </p>
-            </motion.div>
-          </div>
-          <div
-            className="p-4 md:w-1/3 sm:w-1/2 w-full "
-            data-aos="fade-up"
-            onMouseOver={() => set(3)}
-            id="locker-room"
-          >
-            <motion.div
-              className="xsm:h-fit w-2/3 mx-auto  lg:h-60 opacity-80 px-8 pb-10 pt-2"
-              whileHover={cardHover}
-              transition={{ type: "spring", duration: 1 }}
-            >
-              <h1
-                className="capitalize mb-6 text-3xl"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-              >
-                Personal Training
-              </h1>
-              <p
-                className="font-light"
-                data-aos="fade-up"
-                data-aos-duration="2500"
-              >
-                Performance at its highest level with renowned Personal
-                Training.
-              </p>
-            </motion.div>
-          </div>
-        </div>
+      {imgs[active]}
+      <div
+        key="benifits"
+        className="py-10 w-fit flex xsm:overflow-scroll lg:overflow-x-hidden -m-4 text-center"
+      >
+        {cardElements}
       </div>
     </section>
   );

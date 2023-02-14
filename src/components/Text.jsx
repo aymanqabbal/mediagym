@@ -1,37 +1,40 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
-function Text({ text, delay }) {
+import { RendersContext } from "../RendersContext";
+function Text({ text, delay, k, tdelay }) {
   const li = text.split("");
-  useEffect(() => {
-    return console.log("dismounted");
-  });
+
   const elements = li.map((c, i) => (
-    <AnimatePresence mode="wait">
+    <AnimatePresence key={i}>
       <motion.span
         className="inline-block"
-        initial={{ y: 100, opacity: 0 }}
+        initial={{
+          y: 100,
+          opacity: 0,
+          transition: { duration: 1 },
+        }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 100, opacity: 0 }}
         transition={{
           duration: 0.3,
-          delay: delay + i * 0.1,
+          delay: delay + i * 0.2,
         }}
+        key={k + ":" + c + i}
       >
         {c}
       </motion.span>
     </AnimatePresence>
   ));
   return (
-    <AnimatePresence>
+    <AnimatePresence key={"animate" + k + "wrapper"}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ delay: delay }}
+        transition={{ delay: tdelay }}
         className="xsm:text-4xl sm:text-5xl overflow-hidden"
+        // key={text + "text" + k}
       >
-        {elements}
+        <AnimatePresence key={"animate" + k}>{elements}</AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );

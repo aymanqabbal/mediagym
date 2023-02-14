@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <section className="homePage h-screen z-0">
       <Hero />
-      <Benifits />
+      <Benifits key={"benifits component"} />
       <section className="container w-screen h-screen relative snap-start">
         <div className="map-container absolute z-40 text-white">
           <AddressMap />

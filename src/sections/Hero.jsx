@@ -4,7 +4,7 @@ import AnimatedCharacters from "../components/AnimatedCharacters";
 import AnimatedLetters from "../components/Banner";
 import useInterval from "react-useinterval";
 import Text1 from "../components/Text1";
-import { AnimatePresence, motion } from "framer-motion";
+import { animate, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Text from "../components/Text";
 export default function Hero() {
@@ -12,22 +12,36 @@ export default function Hero() {
   const words = ["WANT", "NEED", "LOVE", "DESIRE", "DESERVE"];
   const interval = useInterval(() => {
     word == words.length - 1 ? set(0) : set(word + 1);
-    console.log(word);
   }, 2000);
+  const herotxt = `THE GIFT YOU ACTUALLY`;
+  const li = herotxt.split(" ").map((w, i) => (
+    <AnimatePresence key={"herotext" + i + w + "animate"}>
+      <motion.div
+        initial={{ opacity: 0, transition: { duration: 1 } }}
+        animate={{ opacity: 1, transition: { duration: 1 } }}
+        key={"herotext" + i}
+      >
+        <Text
+          key={"text" + w + i}
+          k={"text" + w + i}
+          text={w}
+          tdelay={i / 2}
+          delay={i / 2}
+        />
+      </motion.div>
+    </AnimatePresence>
+  ));
   const last = (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 2, type: "tween" }}
-      className="overflow-hidden"
-    >
-      <Text key={word} text={words[word]} delay={0.2} />
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, transition: { duration: 1 } }}
+        animate={{ opacity: 1, transition: { duration: 1 } }}
+        key={"herotext1"}
+      >
+        <Text key={word} text={words[word]} tdelay={1} delay={0.2} />
+      </motion.div>
+    </AnimatePresence>
   );
-  const herotxt = `THE GIFT YOU ACTUALLY `;
-  const li = herotxt
-    .split(" ")
-    .map((w, i) => <Text key={i} text={w} delay={i / 2} />);
   return (
     <motion.section
       initial={{
@@ -43,9 +57,10 @@ export default function Hero() {
       style={{
         backgroundImage: `url(${images[2].url})`,
       }}
+      key={"text-wrapper-motion"}
     >
       <div className="xsm:pt-16 xsm:pl-8 sm:pt-32 sm:pl-32 ">
-        <div className="main-text w-max ">
+        <div className="main-text w-max " key={"text-wrapper"}>
           {li}
           {last}
         </div>
