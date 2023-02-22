@@ -1,7 +1,5 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import Text from "../components/Text";
-import gif from "../assets/giphy.gif";
 
 export const ContactUs = () => {
   const form = useRef();

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import images from "../utils/images";
-import { animate, AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Card from "./Card";
 import { BenifitsContext } from "../BenifitsContext";
 export default function Benifits() {

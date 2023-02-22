@@ -92,7 +92,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="hidden md:flex justify-center items-center gap-10 xsm:bg-black md:bg-transparent h-20">
+      <div className="xsm:hidden md:flex justify-center items-center gap-10 xsm:bg-black md:bg-transparent h-20">
         {links.map(({ name, to }, id) => (
           <a
             className={`${nav == id && "text-yellow-400"}`}
@@ -106,7 +106,7 @@ export default function App() {
         ))}
       </div>
 
-      <div className="md:hidden" onClick={cycleOpen}>
+      <div className="md:hidden " onClick={cycleOpen}>
         <motion.svg
           animate={open ? { y: -200 } : { y: 0 }}
           transition={{ duration: 1, bounce: 100 }}
@@ -117,7 +117,7 @@ export default function App() {
           width="20px"
         >
           <motion.rect
-            className="cls-1 "
+            className="cls-1 fill-white stroke-red-300"
             style={{
               x: 0.5,
               y: 0.5,
@@ -134,7 +134,7 @@ export default function App() {
             }}
           />
           <motion.rect
-            className="cls-1"
+            className="cls-1 fill-white stroke-red-300"
             style={{
               x: 0.5,
               y: 118.01,
@@ -145,7 +145,7 @@ export default function App() {
             animate={open ? { opacity: 0 } : { opacity: 1 }}
           />
           <motion.rect
-            className="cls-1"
+            className="cls-1 fill-white stroke-red-300"
             style={{
               x: 0.5,
               y: 236.99,
