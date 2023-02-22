@@ -10,7 +10,7 @@ body {
   box-sizing: border-box;
 
 }
-
+.cls-1{fill:"#fff";stroke:"#000";stroke-miterlimit:10;}
 ::-webkit-scrollbar {
   width: 0px;
 }

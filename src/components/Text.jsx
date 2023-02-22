@@ -31,7 +31,7 @@ function Text({ text, delay, k, tdelay }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: tdelay }}
-        className="xsm:text-4xl sm:text-5xl overflow-hidden"
+        className="xsm:text-4xl sm:text-5xl overflow-hidden sd"
         // key={text + "text" + k}
       >
         <AnimatePresence key={"animate" + k}>{elements}</AnimatePresence>
