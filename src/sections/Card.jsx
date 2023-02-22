@@ -9,7 +9,7 @@ export default function Card({ h1, p, id }) {
     borderRadius: "10%",
     scale: 1.05,
     opacity: 1,
-    transition: { type: "spring", duration: 0.7 },
+    transition: { duration: 0.7 },
   };
   const cardTap = {
     backgroundColor: "rgb(255, 255, 255)",
@@ -17,7 +17,7 @@ export default function Card({ h1, p, id }) {
     borderRadius: "10%",
     scale: 1.1,
     opacity: 1,
-    transition: { type: "spring", duration: 0.7 },
+    transition: { duration: 0.7 },
   };
   return (
     <motion.div

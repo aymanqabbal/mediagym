@@ -5,6 +5,7 @@ import menuIcon from "./menuIcon.svg";
 import MenuButton from "./MenuButton";
 const links = [
   { name: "Home", to: "/" },
+  { name: "Exercises", to: "/exercises" },
   { name: "About", to: "/about" },
   { name: "Contact", to: "/contact" },
 ];
@@ -43,7 +44,7 @@ export default function App() {
     <div
       className={`flex text-center ${
         open && "flex-col"
-      }  md:flex-row justify-between items-center  md:justify-around absolute z-50 top-0 w-screen bg-black py-3 px-20`}
+      }  md:flex-row justify-between items-center  md:justify-around absolute xsm:bg-black md:bg-transparent z-50 top-0 w-screen  xsm:py-3 xsm:px-20 md:p-0`}
     >
       <a href="/" s>
         MEDIAGYM
@@ -91,7 +92,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="hidden md:flex justify-center items-center gap-10 bg-black h-20">
+      <div className="hidden md:flex justify-center items-center gap-10 xsm:bg-black md:bg-transparent h-20">
         {links.map(({ name, to }, id) => (
           <a
             className={`${nav == id && "text-yellow-400"}`}
