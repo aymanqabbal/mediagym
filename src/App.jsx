@@ -11,6 +11,7 @@ import { NavContext } from "./navContext";
 import { useState } from "react";
 import { NotExit } from "./NotExit";
 import Nav from "./components/Nav";
+import Test from "./components/Test";
 export default function App() {
   const [active, set] = useState(0);
   const [renders, increment] = useState(0);
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/exercises" element={<ExersicesPage />} />
               <Route path="/exit" element={<NotExit />} />
+              <Route path="/test" element={<Test />} />
               <Route path="/exercise/:id" element={<ExerciseDetail />} />
             </Routes>
           </RendersContext.Provider>

@@ -4,6 +4,7 @@ import AnimatedCharacters from "../components/AnimatedCharacters";
 import AnimatedLetters from "../components/Banner";
 import useInterval from "react-useinterval";
 import Text1 from "../components/Text1";
+import Test from "../components/Test";
 import { animate, AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Text from "../components/Text";
@@ -62,7 +63,8 @@ export default function Hero() {
       <div className="xsm:pt-16 xsm:pl-8 sm:pt-32 sm:pl-32 ">
         <div className="main-text w-max " key={"text-wrapper"}>
           {li}
-          {last}
+          {/* {last} */}
+          <Test words={words} />
         </div>
         <h1 className="capitalize font-light mt-20" data-aos="fade-up">
           Join Now With $0 Initiation. Offer Ends Soon.
