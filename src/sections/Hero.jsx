@@ -56,7 +56,7 @@ export default function Hero() {
       transition={{ duration: 0.3 }}
       className="hero h-screen w-screen bg-right bg-cover xsm:flex sm:block justify-center items-center"
       style={{
-        backgroundImage: `url(${images[2].url})`,
+        backgroundImage: `url(${images[0].url})`,
       }}
       key={"text-wrapper-motion"}
     >

@@ -4,13 +4,37 @@ import React from "react";
 import BodyPartImage from "../assets/icons/body-part.png";
 import TargetImage from "../assets/icons/target.png";
 import EquipmentImage from "../assets/icons/equipment.png";
+import leg from "../assets/parts/leg.png";
+import all from "../assets/parts/all.png";
+import back from "../assets/parts/back.png";
+import chest from "../assets/parts/chest.png";
+import forearm from "../assets/parts/forearm.png";
+import calves from "../assets/parts/calves.png";
+import cardio from "../assets/parts/cardio.png";
+import neck from "../assets/parts/neck.png";
+import shoulder from "../assets/parts/shoulder.png";
+import biceps from "../assets/parts/biceps.png";
+import abs from "../assets/parts/abs.png";
+const parts = {
+  all: all,
+  back: back,
+  cardio: cardio,
+  chest: chest,
+  "lower arms": forearm,
+  "lower legs": calves,
+  neck: neck,
+  shoulders: shoulder,
+  "upper arms": biceps,
+  "upper legs": leg,
+  waist: abs,
+};
 
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
 
   const extraDetail = [
     {
-      icon: BodyPartImage,
+      icon: parts[bodyPart],
       name: bodyPart,
     },
     {

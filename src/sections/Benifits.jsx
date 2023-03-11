@@ -3,6 +3,7 @@ import images from "../utils/images";
 import { motion } from "framer-motion";
 import Card from "./Card";
 import { BenifitsContext } from "../BenifitsContext";
+
 export default function Benifits() {
   const { active, set } = useContext(BenifitsContext);
 
@@ -63,6 +64,7 @@ export default function Benifits() {
       data-scrollreveal="enter left after 0s over 1s"
       key={"benifits-section"}
     >
+      {console.log(active)}
       {imgs[active]}
       <div
         key="benifits"
