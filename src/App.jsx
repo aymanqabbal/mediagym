@@ -1,6 +1,6 @@
-import "./App.css";
+// import "./App.css";
 import Home from "./pages/Home";
-import "./App.css";
+// import "./App.css";
 import { Routes, Route, useLocation } from "react-router";
 import ExersicesPage from "./pages/ExercisesPage";
 import ExerciseDetail from "./pages/ExerciseDetail";
@@ -19,7 +19,7 @@ export default function App() {
   console.log("app", nav);
   const location = useLocation();
   return (
-    <div className="bg-black text-white font-unbounded w-screen h-screen  py-0 my-0 overflow-x-hidden">
+    <div className="bg-black text-white font-unbounded w-screen h-screen py-0 my-0 overflow-x-hidden">
       <NavContext.Provider value={{ nav, setNav }}>
         <Nav />
         <BenifitsContext.Provider value={{ active, set }}>
