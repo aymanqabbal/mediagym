@@ -12,6 +12,7 @@ import { useState } from "react";
 import { NotExit } from "./NotExit";
 import Nav from "./components/Nav";
 import Test from "./components/Test";
+import About from "./pages/About";
 export default function App() {
   const [active, set] = useState(0);
   const [renders, increment] = useState(0);
@@ -27,6 +28,7 @@ export default function App() {
             <Routes location={location} key={location.pathname}>
               <Route index path="/" element={<Home />} />
               <Route path="/contact" element={<ContactUs />} />
+              <Route path="/about" element={<About />} />
               <Route path="/exercises" element={<ExersicesPage />} />
               <Route path="/exit" element={<NotExit />} />
               <Route path="/test" element={<Test />} />
